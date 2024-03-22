@@ -1,9 +1,18 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+<template>
+  <div class="container">
+    <div class="row">
+      <h1>Home Page</h1>
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'Home Page'
+}
+
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style lang="scss" scoped>
+</style>
