@@ -61,18 +61,19 @@ export default {
     }
 
     &-contact {
-        max-width: 600px;
+        max-width: 550px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-left: auto;
-        gap: 25px;
+        gap: 15px;
         align-items: center;
 
         &-num {
             font-size: 22px;
             letter-spacing: 1.1px;
             transition: .3s;
+            min-width: max-content;
             
             &:hover {
                 color: var(--main-blue);
