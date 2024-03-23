@@ -12,9 +12,12 @@
                 <button class="nav-contact-btn all-btn">получить  консультацию</button>
             </div>
             
-            <button class="nav-btn" @click="linksOpened = !linksOpened">
+            <button class="nav-btn" @click="linksOpened = !linksOpened" :class="{'active': linksOpened}">
                 <span class="nav-btn-line"></span>
                 <span class="nav-btn-line scnd"></span>
+
+                <span class="border-circle frst"></span>
+                <span class="border-circle scnd"></span>
 
                 <span class="nav-btn-txt" :class="{'opened': linksOpened}">закрыть</span>
             </button>
@@ -109,13 +112,17 @@ export default {
         border: solid 2px var(--main-blue);
         border-radius: 50%;
         z-index: 6;
+        padding-bottom: 4px;
+        padding-left: 6px;
+        transition: .2s;
 
         &-line {
             width: 27px;
             height: 2px;
             display: block;
             background: var(--primary-color);
-            position: relative;            
+            position: relative;
+            transition: .3s;        
 
             &.scnd {
                 width: 17px;
@@ -128,7 +135,7 @@ export default {
             right: 0;
             bottom: 0;
             transform: rotate(90deg);
-            translate: 8px 55px;
+            translate: 8px 45px;
             font-size: 14px;
             text-transform: uppercase;
             opacity: 0;
@@ -138,6 +145,51 @@ export default {
             &.opened {
                 opacity: 1;
                 pointer-events: all !important;
+                translate: 8px 55px !important;
+            }
+        }
+
+        .border-circle {
+            width: 52px;
+            height: 52px;
+            position: absolute;
+            top: 0;
+            border-radius: 50%;
+            border: solid 2px var(--main-blue);
+            transition: .2s;
+
+            &.frst {
+                top: -9px;
+                right: -9px;                
+            }
+
+            &.scnd {
+                top: -6px;
+                right: -6.5px;                
+            }
+        }
+
+        &:hover, &.active {
+            padding-bottom: 0;
+            padding-left: 0;
+            .border-circle {
+                &.frst, &.scnd {
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.active {
+            .nav-btn-line {
+                transform: rotate(45deg) translate(4px, 3px);
+
+                &.scnd {
+                    width: 27px;
+                    transform: rotate(-45deg) translate(2px, -1px);
+                    margin-left: 0 !important;
+                }
             }
         }
     }
