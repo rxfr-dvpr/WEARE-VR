@@ -3,7 +3,7 @@
 
   <router-view v-slot="{ Component }">
     <transition enter-active-class="animate__animated animate__fadeInUp"
-    leave-active-class="animate__animated animate__fadeInLeft">
+    leave-active-class="animate__animated animate__fadeOutLeft">
       <component :is="Component" class="page"/>
     </transition>
   </router-view>
