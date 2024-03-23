@@ -1,7 +1,12 @@
 <template>
   <Nav/>
 
-  <router-view/>
+  <router-view v-slot="{ Component }">
+    <transition enter-active-class="animate__animated animate__fadeInUp"
+    leave-active-class="animate__animated animate__fadeInLeft">
+      <component :is="Component" class="page"/>
+    </transition>
+  </router-view>
 
   <img :src="bgFilterImg" alt="" class="bg-filter">
 </template>
@@ -34,6 +39,13 @@ export default {
   z-index: -1;
   object-fit: cover;
   opacity: .7;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 815px;
+  top: 106px;
 }
 
 </style>

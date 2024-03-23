@@ -26,7 +26,7 @@
                 <div class="nav-wrapper" v-show="linksOpened">
                     <ul class="nav__list">
                         <li class="nav__list-item" v-for="(link, idx) in store.links" :key="idx">
-                            <router-link to="/" class="nav__list-link" @click="this.linksOpened = false">
+                            <router-link :to="link.url" class="nav__list-link" @click="this.linksOpened = false">
                                 <span class="link-num">{{ (idx + 1) < 10 ? `0${idx + 1}` : idx + 1 }}</span>
                                 {{ link.name }}
                             </router-link>

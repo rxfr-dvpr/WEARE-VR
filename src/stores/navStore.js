@@ -4,34 +4,44 @@ export const navStore = defineStore('Nav Store', {
     state: () => ({
         links: [
             {
-                name: 'главная'
+                name: 'главная',
+                url: '/'
             },
             {
-                name: 'технологиии'
+                name: 'технологиии',
+                url: '/technology'
             },
             {
-                name: 'услуги'
+                name: 'услуги',
+                url: '/'
             },
             {
-                name: 'кейсы'
+                name: 'кейсы',
+                url: '/'
             },
             {
-                name: 'о компании'
+                name: 'о компании',
+                url: '/'
             },
             {
-                name: 'сертификаты'
+                name: 'сертификаты',
+                url: '/'
             },
             {
-                name: 'команда'
+                name: 'команда',
+                url: '/'
             },
             {
-                name: 'отзывы'
+                name: 'отзывы',
+                url: '/'
             },
             {
-                name: 'блог'
+                name: 'блог',
+                url: '/'
             },
             {
-                name: 'контакты'
+                name: 'контакты',
+                url: '/'
             }
         ]
     })
