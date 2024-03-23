@@ -25,8 +25,11 @@
             <Transition name="wrapper">
                 <div class="nav-wrapper" v-show="linksOpened">
                     <ul class="nav__list">
-                        <li class="nav__list-item">
-                            <a href="" class="nav__list-link"></a>
+                        <li class="nav__list-item" v-for="(link, idx) in store.links" :key="idx">
+                            <router-link to="/" class="nav__list-link" @click="this.linksOpened = false">
+                                <span class="link-num">{{ (idx + 1) < 10 ? `0${idx + 1}` : idx + 1 }}</span>
+                                {{ link.name }}
+                            </router-link>
                         </li>
                     </ul>
 
@@ -42,6 +45,7 @@
 </template>
 
 <script>
+import { navStore } from "@/stores/navStore.js";
 
 export default {
     name: 'Navigation',
@@ -49,7 +53,8 @@ export default {
         return {
             bgImg: "https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/bg-filter.png?alt=media&token=54c9f47c-6cb6-44c8-a113-f4351b4ab231",
             bgVector: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/bg-vector.svg?alt=media&token=84c62bf9-00de-4499-8690-167f0bb8e7fd',
-            linksOpened: false
+            linksOpened: false,
+            store: navStore()
         }
     }
 }
@@ -204,6 +209,9 @@ export default {
         background: linear-gradient(145deg, rgba(32,59,124,1) 0%, rgba(73,47,116,1) 100%);
         overflow: hidden;
         z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .bg-img {
             width: 100%;
@@ -222,6 +230,39 @@ export default {
             transform: translate(-50%, -50%);
             opacity: .1;
             pointer-events: none;
+        }
+
+        .nav__list {
+            max-width: 835px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 25px;
+            z-index: 5;
+            font-family: var(--scnd-font);
+
+            &-item {
+                max-width: 320px;
+                width: 100%;
+            }
+
+            &-link {
+                font-size: 42px;
+                text-transform: capitalize;
+                opacity: .5;
+                transition: .3s;
+                display: flex;
+                gap: 15px;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                .link-num {
+                    font-size: 20px;
+                }
+            }
         }
     }
 }
