@@ -16,7 +16,7 @@
     font-family: var(--main-font);
 }
 
-image {
+img {
     user-select: none;
     pointer-events: none;
 }
@@ -72,5 +72,33 @@ body {
         background: var(--main-blue);
         border-color: var(--main-blue);
         box-shadow: 4px 4px 6px #00000080,-4px -4px 6px #00000080,inset -4px -4px 6px #fff3,inset 4px 4px 6px #0006 !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.title-span {
+    margin-left: 55px;
+    animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        text-shadow: -2.5px -2.5px 0 cadetblue, 
+                        2.5px 2.5px 0 darkred;
+    }
+    25% {
+        text-shadow: 2.5px 2.5px 0 cadetblue, 
+                        -2.5px -2.5px 0 darkred;
+    }
+    50% {
+        text-shadow: 2.5px -2.5px 0 cadetblue, 
+                        -2.5px 2.5px 0 darkred;
+    }
+    75% {
+        text-shadow: 2.5px 2.5px 0 cadetblue, 
+                        2.5px -2.5px 0 darkred;
     }
 }
