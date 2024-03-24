@@ -74,11 +74,14 @@ export default {
     column-gap: 45px;
     flex-wrap: unset;
     overflow-x: hidden;
+    align-items: center;
   }
 }
 
 .side-nav {
   max-width: max-content;
+  width: 100%;
+  height: max-content;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -101,6 +104,7 @@ export default {
 
 .all-pages {
   width: 100%;
+  height: 100%;
   position: relative;
 
   .page {
