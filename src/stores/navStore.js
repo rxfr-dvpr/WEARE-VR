@@ -5,43 +5,53 @@ export const navStore = defineStore('Nav Store', {
         links: [
             {
                 name: 'главная',
-                url: '/'
+                url: '/',
+                active: true
             },
             {
                 name: 'технологиии',
-                url: '/technology'
+                url: '/technology',
+                active: false
             },
             {
                 name: 'услуги',
-                url: '/'
+                url: '/services',
+                active: false
             },
             {
                 name: 'кейсы',
-                url: '/'
+                url: '/cases',
+                active: false
             },
             {
                 name: 'о компании',
-                url: '/'
+                url: '/about',
+                active: false
             },
             {
                 name: 'сертификаты',
-                url: '/'
+                url: '/sertificate',
+                active: false
             },
             {
                 name: 'команда',
-                url: '/'
+                url: '/team',
+                active: false
             },
             {
                 name: 'отзывы',
-                url: '/'
+                url: '/reviews',
+                active: false
             },
             {
                 name: 'блог',
-                url: '/'
+                url: '/news',
+                active: false
             },
             {
                 name: 'контакты',
-                url: '/'
+                url: '/contact',
+                active: false
             }
         ]
     })
