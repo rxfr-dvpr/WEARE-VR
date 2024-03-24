@@ -1,7 +1,7 @@
 <template>
     <div class="side-nav">
-        <span @click="selectPage(idx, btn.url)" class="side-nav-btn" v-for="(btn, idx) in store.links" 
-        :key="idx" :class="{'active': btn.active}"></span>
+      <router-link :to="btn.url" class="side-nav-btn" v-for="(btn, idx) in store.links" 
+      :key="idx"></router-link>
     </div>
 </template>
 
@@ -9,20 +9,12 @@
 import { navStore } from "@/stores/navStore.js";
 
 export default {
-    name: 'Side Navigation',
-    data() {
-        return {
-            store: navStore()
-        }
-    },
-    methods: {
-        selectPage(idx, url) {
-          this.store.links.map(item => item.active = false)
-          this.store.links[idx].active = true
-        
-          this.$router.push(url);
-        }
+  name: 'Side Navigation',
+  data() {
+    return {
+      store: navStore()
     }
+  }
 }
 
 </script>
@@ -46,7 +38,7 @@ export default {
     z-index: 4;
     transition: .4s;
 
-    &.active {
+    &.router-link-exact-active {
       height: 40px;
       border-radius: 3px !important;
     }

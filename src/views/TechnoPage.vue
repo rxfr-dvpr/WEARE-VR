@@ -1,11 +1,15 @@
 <template>
-    <h1>Technology Page</h1>
+    <TechnoSection/>
 </template>
 
 <script>
+import TNTechnologies from '@/components/TNTechnologies.vue'
 
 export default {
-    name: 'Technology Page'
+    name: 'Technology Page',
+    components: {
+        TechnoSection: TNTechnologies
+    }
 }
 
 </script>

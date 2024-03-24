@@ -255,7 +255,7 @@ export default {
                 display: flex;
                 gap: 15px;
 
-                &:hover {
+                &:hover, &.router-link-exact-active {
                     opacity: 1;
                 }
 

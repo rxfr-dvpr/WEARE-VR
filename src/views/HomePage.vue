@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import homeHeader from '@/components/Home/homeHeader.vue'
+import HMHeader from '@/components/HMHeader.vue'
 
 export default {
   name: 'Home Page',
   components: {
-    Header: homeHeader
+    Header: HMHeader
   }
 }
 

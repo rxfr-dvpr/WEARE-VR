@@ -5,7 +5,7 @@
             <div class="header__descr">
                 <h1 class="header__descr-title" v-html="title"></h1>
 
-                <p class="header__descr-txt">{{ txt }}</p>
+                <p class="header__descr-txt all-txt">{{ txt }}</p>
             </div>
 
             <div class="header-img-box">
@@ -55,7 +55,7 @@ export default {
         row-gap: 35px;
 
         &-title {
-            font-size: 71px;
+            font-size: 70px;
             text-transform: uppercase;
             font-weight: 300;
         }
@@ -63,9 +63,6 @@ export default {
         &-txt {
             max-width: 480px;
             width: 100%;
-            font-size: 17px;
-            text-transform: uppercase;
-            opacity: .8;
             margin-left: 55px;
             letter-spacing: 1.1px;
             font-weight: 300;
@@ -75,7 +72,6 @@ export default {
     &-img-box {
         max-width: 800px;
         width: 100%;
-        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
