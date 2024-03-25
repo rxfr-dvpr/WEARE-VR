@@ -6,6 +6,14 @@
                 <h1 class="header__descr-title" v-html="title"></h1>
 
                 <p class="header__descr-txt all-txt">{{ txt }}</p>
+
+                <div class="header-sertificates">
+                    <router-link to="/sertificate" class="header-sertificates-item" v-for="(item, idx) in sertificates" :key="idx">
+                        <span>/</span> 
+                        &nbsp; 
+                        {{ item.name }}
+                    </router-link>
+                </div>
             </div>
 
             <div class="header-img-box">
@@ -27,7 +35,15 @@ export default {
     data() {
         return {
             title: 'разработка <span class="title-span">vr/ar</span> проектов',
-            txt: 'моделирование и визуализация 3D-объектов в формате виртуальной реальности'
+            txt: 'моделирование и визуализация 3D-объектов в формате виртуальной реальности',
+            sertificates: [
+                {
+                    name: 'Участники фестиваля круг света'
+                },
+                {
+                    name: 'Cертификат iso 9001'
+                }
+            ]
         }
     }
 }
@@ -66,6 +82,26 @@ export default {
             margin-left: 55px;
             letter-spacing: 1.1px;
             font-weight: 300;
+        }
+
+
+        .header-sertificates {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            margin-top: 50px;
+
+            &-item {
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 1.1px;
+
+                span {
+                    font-size: 22px;
+                    color: var(--main-blue);
+                }
+            }
         }
     }
 
