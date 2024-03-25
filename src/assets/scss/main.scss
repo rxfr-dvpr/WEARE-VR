@@ -6,6 +6,7 @@
     --primary-color: #fff;
     --main-font: "Exo 2", sans-serif;
     --scnd-font: "Roboto Mono", monospace;
+    --dark-blue: #000032;
 }
 
 * {
@@ -14,6 +15,7 @@
     box-sizing: border-box;
     color: var(--primary-color);
     font-family: var(--main-font);
+    outline: none;
 }
 
 img {
@@ -71,7 +73,7 @@ body {
     &:hover {
         background: var(--main-blue);
         border-color: var(--main-blue);
-        box-shadow: 4px 4px 6px #00000080,-4px -4px 6px #00000080,inset -4px -4px 6px #fff3,inset 4px 4px 6px #0006 !important;
+        box-shadow: 4px 4px 6px #0000004b,-4px -4px 6px #0000004b,inset -4px -4px 6px #fff3,inset 4px 4px 6px rgba(0, 0, 0, 0.274) !important;
     }
 }
 

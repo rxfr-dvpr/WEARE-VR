@@ -9,10 +9,10 @@
             <div class="nav-contact">
                 <a href="tel:+998998173066" class="nav-contact-num">+998 99 817 30 66</a>
 
-                <button class="nav-contact-btn all-btn">получить  консультацию</button>
+                <button class="nav-contact-btn all-btn" @click="consultOpened = true">получить  консультацию</button>
             </div>
             
-            <button class="nav-btn" @click="linksOpened = !linksOpened" :class="{'active': linksOpened}">
+            <button class="nav-btn" @click="linksOpened = !linksOpened" :class="{'active': linksOpened, 'consult-opened': consultOpened}">
                 <span class="nav-btn-line"></span>
                 <span class="nav-btn-line scnd"></span>
 
@@ -38,7 +38,10 @@
                     <img :src="bgVector" alt="" class="bg-vector">
                 </div>
             </Transition>
-
+            
+            <Transition name="consult">
+                <Consultation v-show="consultOpened" @backClick="consultOpened = false"/>
+            </Transition>
         </div>
     </div>
   </nav>
@@ -46,15 +49,20 @@
 
 <script>
 import { navStore } from "@/stores/navStore.js";
+import Consultation from './Consultation.vue';
 
 export default {
     name: 'Navigation',
+    components: {
+        Consultation
+    },
     data() {
         return {
             bgImg: "https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/bg-filter.png?alt=media&token=54c9f47c-6cb6-44c8-a113-f4351b4ab231",
             bgVector: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/bg-vector.svg?alt=media&token=84c62bf9-00de-4499-8690-167f0bb8e7fd',
             linksOpened: false,
-            store: navStore()
+            store: navStore(),
+            consultOpened: false
         }
     }
 }
@@ -197,6 +205,12 @@ export default {
                 }
             }
         }
+
+        &.consult-opened {
+            .nav-btn-line {
+                background: var(--dark-blue);
+            }
+        }
     }
 
     &-wrapper {
@@ -241,6 +255,7 @@ export default {
             row-gap: 25px;
             z-index: 5;
             font-family: var(--scnd-font);
+            padding: 0 15px;
 
             &-item {
                 max-width: 320px;
@@ -275,6 +290,16 @@ export default {
 .wrapper-enter-from,
 .wrapper-leave-to {
   opacity: 0;
+}
+
+.consult-enter-active,
+.consult-leave-active {
+  transition: .4s ease;
+}
+
+.consult-enter-from,
+.consult-leave-to {
+    opacity: 0;
 }
 
 </style>
