@@ -2,7 +2,7 @@
   <div class="consult-modal">
     <div class="container">
         <div class="row">
-            <button class="back-btn all-btn" @click="this.$emit('backClick')">back</button>
+            <button class="back-btn all-btn" @click="this.$emit('backClick')"><i class="far fa-long-arrow-left"></i></button>
 
             <form @submit.prevent class="modal-form">
                 <h3 class="modal-form-title">{{ title }}</h3>
@@ -60,16 +60,29 @@ export default {
     }
 
     .back-btn {
-        max-width: 100px;
+        max-width: 70px;
         font-weight: 600;
         color: var(--dark-blue);
         border-color: var(--dark-blue);
         border-width: 2px;
+        padding: 10px 0;
+
+        i {
+            font-size: 20px;
+            color: var(--dark-blue);
+            transition: .3s;
+        }
 
         &:hover {
             color: var(--primary-color);
             border-color: transparent;
+
+            i {
+                color: var(--primary-color);
+            }
         }
+
+       
     }
 
     .modal-form {
