@@ -17,11 +17,11 @@
             </div>
 
             <div class="header-img-box">
-                <img src="@/assets/images/header-img.png" alt="" class="header-img">
+                <img :src="mainImg" alt="" class="header-img">
 
-                <img src="@/assets/images/header-ellipse.png" alt="" class="header-ellipse">
+                <img :src="ellipseImg" alt="" class="header-ellipse">
 
-                <img src="@/assets/images/header-ellipse-2.png" alt="" class="header-ellipse-2">
+                <img :src="ellipse2Img" alt="" class="header-ellipse-2">
             </div>
         </div>
     </div>
@@ -43,7 +43,10 @@ export default {
                 {
                     name: 'Cертификат iso 9001'
                 }
-            ]
+            ],
+            mainImg: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Home%2Fheader-img.png?alt=media&token=62ee27b7-38bd-4887-8ef2-a843a8eaa3c8',
+            ellipseImg: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Home%2Fheader-ellipse.png?alt=media&token=475cd578-acf4-41d3-84de-8897fce17a5a',
+            ellipse2Img: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Home%2Fheader-ellipse-2.png?alt=media&token=c0790cb4-a164-4553-8168-4e5c1595d7a3'
         }
     }
 }
