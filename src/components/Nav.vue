@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <router-link to="/" class="nav-logo">
-                <img src="@/assets/images/nav-logo.svg" alt="" class="nav-logo-img">
+                <img :src="consultOpened ? darkLogo : lightLogo" alt="" class="nav-logo-img">
             </router-link>
 
             <div class="nav-contact">
@@ -58,6 +58,8 @@ export default {
     },
     data() {
         return {
+            lightLogo: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Nav%2Fnav-logo.svg?alt=media&token=70883c0e-9a01-4127-b4a5-049a10172b06',
+            darkLogo: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Nav%2Fnav-logo-dark.svg?alt=media&token=53b228f0-bc84-4a87-ac04-9bebc3da8382',
             bgImg: "https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/bg-filter.png?alt=media&token=54c9f47c-6cb6-44c8-a113-f4351b4ab231",
             bgVector: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/bg-vector.svg?alt=media&token=84c62bf9-00de-4499-8690-167f0bb8e7fd',
             linksOpened: false,
