@@ -56,7 +56,6 @@ export default {
 
 .main-pages {
   width: 100%;
-  height: 700px;
   position: relative;
 
   .row {
@@ -69,7 +68,7 @@ export default {
 
 .all-pages {
   width: 100%;
-  height: 100%;
+  min-height: 700px;
   position: relative;
 
   .page {
