@@ -11,7 +11,7 @@
 
                 <div class="form-inputs">
                     <input type="text" class="name-inp all-inp" required placeholder="Имя">
-                    <input type="tel" class="tel-inp all-inp" required placeholder="Телефон">
+                    <input type="number" class="tel-inp all-inp" required placeholder="Телефон">
                     <input type="email" class="email-inp all-inp" required placeholder="E-mail">
                     <textarea class="msg-inp all-inp" required placeholder="Описание задачи"></textarea>
                 </div>

@@ -7,12 +7,13 @@
             </router-link>
 
             <div class="nav-contact">
-                <a href="tel:+998998173066" class="nav-contact-num">+998 99 817 30 66</a>
+                <a href="tel:+998998173066" class="nav-contact-num" :class="{'dark': consultOpened}">+998 99 817 30 66</a>
 
                 <button class="nav-contact-btn all-btn" @click="consultOpened = true">получить  консультацию</button>
             </div>
             
-            <button class="nav-btn" @click="linksOpened = !linksOpened" :class="{'active': linksOpened, 'consult-opened': consultOpened}">
+            <button class="nav-btn" @click="linksOpened = !linksOpened" :disabled="consultOpened"
+            :class="{'active': linksOpened, 'consult-opened': consultOpened}">
                 <span class="nav-btn-line"></span>
                 <span class="nav-btn-line scnd"></span>
 
@@ -85,7 +86,7 @@ export default {
     &-logo {
         max-width: 200px;
         width: 100%;
-        z-index: 6;
+        z-index: 8;
 
         &-img {
             width: 100%;
@@ -106,8 +107,10 @@ export default {
             letter-spacing: 1.1px;
             transition: .3s;
             min-width: max-content;
+            z-index: 6;
+            font-weight: 600;
             
-            &:hover {
+            &:hover, &.dark {
                 color: var(--main-blue);
             }
         }
@@ -126,7 +129,7 @@ export default {
         justify-content: center;
         border: solid 2px var(--main-blue);
         border-radius: 50%;
-        z-index: 6;
+        z-index: 8;
         padding-bottom: 4px;
         padding-left: 6px;
         transition: .2s;
@@ -224,7 +227,7 @@ export default {
         background: rgb(32,59,124);
         background: linear-gradient(145deg, rgba(32,59,124,1) 0%, rgba(73,47,116,1) 100%);
         overflow: hidden;
-        z-index: 5;
+        z-index: 7;
         display: flex;
         justify-content: center;
         align-items: center;
