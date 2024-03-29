@@ -68,7 +68,7 @@ export default {
 
 .all-pages {
   width: 100%;
-  min-height: 700px;
+  min-height: 780px;
   position: relative;
 
   .page {
