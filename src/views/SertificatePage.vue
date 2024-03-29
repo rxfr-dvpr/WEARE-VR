@@ -12,6 +12,8 @@
             </figcaption>
 
             <img :src="doc.img" alt="" class="doc-img">
+
+            <button class="doc-btn"><i class="far fa-eye"></i></button>
           </figure>
         </div>
       </div>
@@ -85,6 +87,7 @@ export default {
       padding: 20px 24px 60px;
       cursor: pointer;
       transition: .3s;
+      position: relative;
 
       .doc-img {
         max-width: 230px;
@@ -105,11 +108,35 @@ export default {
         }
       }
 
+      .doc-btn {
+        width: 100px;
+        height: 100px;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--main-blue);
+        border-radius: 50%;
+        border: 0;
+        font-size: 30px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .4s;
+        box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .3);
+      }
+
       &:hover {
         background: var(--main-blue);
 
         .doc-caption {
           opacity: 1;
+        }
+
+        .doc-btn {
+          opacity: 1;
+          visibility: visible;
         }
       }
     }
