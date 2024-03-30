@@ -1,5 +1,5 @@
 <template>
-  <div class="docs__section">
+  <section class="docs__section">
     <div class="container">
       <div class="row">
         <h2 class="docs-title">{{ title }}</h2>
@@ -13,11 +13,15 @@
 
             <img :src="doc.img" alt="" class="doc-img">
 
-            <button class="doc-btn"><i class="far fa-eye"></i></button>
+            <button class="doc-btn" @click="docModal(idx)"><i class="far fa-eye"></i></button>
           </figure>
         </div>
       </div>
     </div>
+  </section>
+
+  <div class="doc-modal" :class="{'opened': modalOpened}" @click.self="modalOpened = false">
+    <img :src="modalImg" alt="" class="doc-modal-img">
   </div>
 </template>
 
@@ -44,7 +48,16 @@ export default {
           id: Math.floor(Math.random() * 9999),
           bigImg: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Sertificates%2Fdoc-3-big.png?alt=media&token=cc47478c-f6e4-473e-81b6-2f8a38206d62'
         }
-      ]
+      ],
+      modalImg: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Sertificates%2Fdoc-1-big.png?alt=media&token=c052b508-bdd6-45ca-b2e4-bcacf896f221',
+      modalOpened: false
+    }
+  },
+  methods: {
+    docModal(idx) {
+      this.modalImg = this.docs[idx].bigImg
+
+      this.modalOpened = true
     }
   }
 }
@@ -109,18 +122,18 @@ export default {
       }
 
       .doc-btn {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
         display: grid;
         place-items: center;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(.5);
         background: var(--main-blue);
         border-radius: 50%;
         border: 0;
-        font-size: 30px;
+        font-size: 25px;
         opacity: 0;
         visibility: hidden;
         transition: .4s;
@@ -137,9 +150,36 @@ export default {
         .doc-btn {
           opacity: 1;
           visibility: visible;
+          transform: translate(-50%, -50%) scale(1);
         }
       }
     }
+  }
+}
+
+.doc-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  transition: .5s;
+  background: rgba($color: #000000, $alpha: .3);
+  z-index: 70;
+  opacity: 0;
+  visibility: hidden;
+
+  &-img {
+    max-width: 510px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &.opened {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
