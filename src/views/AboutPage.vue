@@ -12,7 +12,8 @@
             <span>{{ item.name }}</span>
           </p>
         </div>
-
+        
+        <img src="@/assets/images/about-gradient.png" alt="" class="about-gradient">
       </div>
     </div>
   </section>
@@ -59,6 +60,7 @@ export default {
   .row {
     flex-direction: column;
     row-gap: 40px;
+    position: relative;
   }
 
   .about-title {
@@ -98,6 +100,16 @@ export default {
         font-size: 17px;
       }
     }
+  }
+
+  .about-gradient {
+    max-width: 1000px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: -1;
   }
 }
 

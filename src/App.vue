@@ -61,7 +61,6 @@ export default {
   .row {
     column-gap: 45px;
     flex-wrap: unset;
-    overflow-x: hidden;
     align-items: center;
   }
 }
