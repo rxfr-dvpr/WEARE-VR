@@ -166,10 +166,11 @@ export default {
   display: flex;
   align-items: center;
   transition: .5s;
-  background: rgba($color: #000000, $alpha: .3);
+  background: rgba($color: #000000, $alpha: .5);
   z-index: 70;
   opacity: 0;
   visibility: hidden;
+  padding: 0 15px;
 
   &-img {
     max-width: 510px;
