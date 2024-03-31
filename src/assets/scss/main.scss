@@ -39,6 +39,10 @@ html {
     background: var(--bg-color);
 }
 
+body {
+    overflow-y: hidden;
+}
+
 .container {
     max-width: 1545px;
     width: 100%;

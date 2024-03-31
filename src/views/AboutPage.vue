@@ -22,6 +22,8 @@
         </div>
       </div>
     </div>
+
+    <img src="@/assets/images/about-img.png" alt="" class="about-img">
   </section>
 </template>
 
@@ -153,6 +155,16 @@ export default {
       max-width: 175px;
       width: 100%;
     }
+  }
+
+  .about-img {
+    max-width: 700px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    filter: blur(5px)
   }
 }
 
