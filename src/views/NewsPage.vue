@@ -4,6 +4,13 @@
       <div class="row">
         <h2 class="news-title">{{ title }}</h2>
         
+        <div class="news-filter">
+          <span class="news-filter-btn" v-for="(filter, idx) in filters" :key="idx" 
+          :class="{'selected': filter.selected}" @click="selectType(idx)">
+            {{ filter.type }}
+          </span>
+        </div>
+
         <NewsSwiper :slides="slides"/>
       </div>
     </div>
@@ -43,11 +50,35 @@ export default {
           txt: 'Виртуальная реальность меняет методы работы бизнеса. Прочитайте эту статью, чтобы узнать влияние VR на бизнес. Мы понимаем, что в современном мире визуальное восприятие играет ключевую роль, поэтому наши интерактивные проекты создаются с учетом самых последних тенденций в дизайне и разработке программного обеспечения.',
           date: '12.09.2022'
         },
+      ],
+      filters: [
+        {
+          selected: true,
+          type: 'Все'
+        },
+        {
+          selected: false,
+          type: 'Новости'
+        },
+        {
+          selected: false,
+          type: 'Обзоры'
+        },
+        {
+          selected: false,
+          type: 'Советы'
+        }
       ]
     }
   },
   components: {
     NewsSwiper
+  },
+  methods: {
+    selectType(idx) {
+      this.filters.map(item => item.selected = false)
+      this.filters[idx].selected = true
+    }
   }
 }
 
@@ -68,6 +99,31 @@ export default {
     font-size: 52px;
     font-weight: 500;
     text-transform: uppercase;
+  }
+
+  .news-filter {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    &-btn {
+      padding: 7px 25px 8px;
+      border-radius: 40px;
+      border: solid 1px rgba($color: #fff, $alpha: .2);
+      font-size: 15px;
+      cursor: pointer;
+      transition: .3s;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+
+      &.selected, &:hover, &:active {
+        background: var(--main-blue);
+        border-color: var(--main-blue);
+      }
+    }
   }
 }
 
