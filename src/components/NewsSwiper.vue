@@ -1,5 +1,5 @@
 <template>
-    <swiper :modules="modules" class="news-swiper" :slidesPerView="3.3" :spaceBetween="50" :navigation="true">
+    <swiper :modules="modules" class="news-swiper" :slidesPerView="3.3" :spaceBetween="50" :navigation="cltrs">
         <swiper-slide class="news-swiper-slide" v-for="(news, idx) in slides" :key="idx">
             <img :src="news.img" alt="" class="news-img">
 
@@ -14,6 +14,11 @@
             </p>
         </swiper-slide>
     </swiper>
+
+    <div class="news-swiper-btns all-swiper-btns">
+        <span class="news-swiper-btn left all-swiper-btn"><i class="fal fa-long-arrow-left"></i></span>
+        <span class="news-swiper-btn right all-swiper-btn"><i class="fal fa-long-arrow-right"></i></span>
+    </div>
 </template>
 
 <script>
@@ -40,8 +45,8 @@ export default {
         return {
             modules: [Navigation],
             cltrs: {
-                prevEl: '.swiper-ctrls-btn.left',
-                nextEl: '.swiper-ctrls-btn.right'
+                prevEl: '.news-swiper-btn.left',
+                nextEl: '.news-swiper-btn.right'
             }
         }
     }
@@ -112,6 +117,10 @@ export default {
             }
         }
     }
+}
+
+.news-swiper-btns {
+    margin-top: 40px;
 }
 
 </style>

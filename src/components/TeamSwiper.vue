@@ -11,9 +11,9 @@
     </swiper-slide>
   </swiper>
 
-  <div class="swiper-ctrls">
-    <span class="swiper-ctrls-btn left"><i class="fal fa-long-arrow-left"></i></span>
-    <span class="swiper-ctrls-btn right"><i class="fal fa-long-arrow-right"></i></span>
+  <div class="swiper-ctrls all-swiper-btns">
+    <span class="swiper-ctrls-btn left all-swiper-btn"><i class="fal fa-long-arrow-left"></i></span>
+    <span class="swiper-ctrls-btn right all-swiper-btn"><i class="fal fa-long-arrow-right"></i></span>
   </div>
 </template>
 
@@ -93,43 +93,6 @@ export default {
 
         &:nth-child(2n) {
             margin-top: 45px;
-        }
-    }
-}
-
-.swiper-ctrls {
-    max-width: 180px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border: solid 1px rgba($color: #fff, $alpha: .1);
-    border-radius: 65px;
-    margin-left: auto;
-
-    &-btn {
-        font-size: 25px;
-        cursor: pointer;
-
-        i {
-            transition: .3s;
-        }
-
-        &:hover i {
-            color: var(--main-blue);
-        }
-
-        &.swiper-button-disabled {
-            cursor: default;
-
-            i {
-                opacity: .3;
-            }
-
-            &:hover i {
-                color: var(--primary-color);
-            }
         }
     }
 }
