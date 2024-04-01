@@ -1,6 +1,6 @@
 <template>
-    <swiper :modules="modules" class="news-swiper" :slidesPerView="3.3" :spaceBetween="50" :navigation="cltrs">
-        <swiper-slide class="news-swiper-slide" v-for="(news, idx) in slides" :key="idx">
+    <swiper :modules="modules" class="news-swiper" :slidesPerView="3.3" :spaceBetween="50" :navigation="cltrs" :grabCursor="true">
+        <swiper-slide class="news-swiper-slide" v-for="(news, idx) in slides" :key="idx" @click="pushToNews(idx)">
             <img :src="news.img" alt="" class="news-img">
 
             <h4 class="news-title">{{ news.title }}</h4>
@@ -49,6 +49,11 @@ export default {
                 nextEl: '.news-swiper-btn.right'
             }
         }
+    },
+    methods: {
+        pushToNews(idx) {
+            this.$router.push(`/news/:${idx}`)
+        }
     }
 }
 
@@ -65,6 +70,7 @@ export default {
         display: flex;
         flex-direction: column;
         row-gap: 5px;
+        cursor: pointer;
 
         .news-img {
             width: 100%;
@@ -83,6 +89,7 @@ export default {
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-box-orient: vertical;
+            transition: .3s;
 
             &::first-letter {
                 text-transform: uppercase;
@@ -114,6 +121,12 @@ export default {
 
             .news-suggestions {
                 text-transform: uppercase;
+            }
+        }
+
+        &:hover {
+            .news-title {
+                color: var(--main-blue);
             }
         }
     }
