@@ -56,6 +56,61 @@ export default {
 
     &-slide {
         width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+
+        .news-img {
+            width: 100%;
+            max-height: 220px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-title {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 1.1px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+
+        .news-txt {
+            font-size: 15px;
+            opacity: .6;
+            font-weight: 300;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            margin-bottom: 30px;
+        }
+
+        .news-info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #fff;
+            font-size: 14px;
+            opacity: .6;
+            font-weight: 300;
+
+            .news-suggestions {
+                text-transform: uppercase;
+            }
+        }
     }
 }
 
