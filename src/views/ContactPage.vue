@@ -18,12 +18,12 @@
 
             <button class="form-btn all-btn" type="submit">{{ form.btn }}</button>
           </div>
-        </form>
 
-        <!-- <div class="contact__info">
-          <a href="" class="contact__info-number"></a>
-          <a href="" class="contact__info-mail"></a>
-        </div> -->
+          <div class="contact__info">
+            <a href="tel:+998998173066" class="contact__info-txt number" target="_blank"><i class="fal fa-mobile"></i> +998 (99) 817-30-66</a>
+            <a href="mailto:freelanceredfox@gmail.com" class="contact__info-txt mail" target="_blank"><i class="fas fa-envelope"></i> freelanceredfox@gmail.com</a>
+          </div>
+        </form>
 
       </div>
     </div>
@@ -145,6 +145,32 @@ export default {
         font-size: 14px;
         cursor: pointer;
         user-select: none
+      }
+    }
+
+    .contact__info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+
+      &-txt {
+        font-size: 22px;
+        letter-spacing: 1.1px;
+        transition: .3s;
+
+        i {
+          margin-right: 10px;
+          transition: .3s;
+        }
+
+        &:hover {
+          color: var(--main-blue);
+
+          i {
+            color: var(--main-blue);
+          }
+        }
       }
     }
   }
