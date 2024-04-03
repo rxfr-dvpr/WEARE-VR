@@ -3,6 +3,14 @@
     <div class="container">
       <div class="row">
 
+        <div class="contact__content">
+          <h2 class="contact-title">{{ content.title }}</h2>
+
+          <p class="contact__content-txt">{{ content.backTxt }}</p>
+
+          <img src="@/assets/images/contact-img.png" alt="" class="contact__content-img">
+        </div>
+
         <form @submit.prevent class="contact__form">
           <h4 class="contact__form-title">{{ form.title }}</h4>
 
@@ -58,6 +66,10 @@ export default {
         msg: '',
         btn: 'Отправить заявку',
         policy: 'Я согласен с политикой конфиденциальности'
+      },
+      content: {
+        title: 'РАсскажите О вашем проекте',
+        backTxt: 'Контакты'
       }
     }
   }
@@ -73,6 +85,7 @@ export default {
 
   .row {
     justify-content: space-between;
+    overflow: hidden;
   }
 
   .contact__form {
@@ -172,6 +185,49 @@ export default {
           }
         }
       }
+    }
+  }
+
+  .contact__content  {
+    max-width: 685px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 100px;
+
+    .contact-title {
+      max-width: 500px;
+      width: 100%;
+      font-size: 52px;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 1.1px;
+      position: absolute;
+      top: 35px;
+      left: 55px;
+      user-select: none;
+    }
+
+    &-txt {
+      font-size: 122px;
+      text-transform: uppercase;
+      z-index: -1;
+      opacity: .1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba($color: #fff, $alpha: .7);
+      user-select: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-img {
+      max-width: 500px;
+      width: 100%;
+      opacity: .15;
     }
   }
 }
