@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <img src="@/assets/images/about-img.png" alt="" class="about-img">
+    <img :src="mainImg" alt="" class="about-img">
   </section>
 </template>
 
@@ -33,6 +33,7 @@ export default {
   name: 'About Page',
   data() {
     return {
+      mainImg: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/About%2Fabout-img.png?alt=media&token=daf6aee6-3e25-48f0-a282-654431dde829',
       gradientImg: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/About%2Fabout-gradient.png?alt=media&token=0c110355-3a1b-4c44-9f36-9f26f006f80c',
       title: 'Мы становимся другом для нашего клиента',
       txt: 'что бы изучить и понять внутренней мир  заказчика, а затем выразить его в интерьере. Дизайн проект — это подлинный шедевр, который рождается в единстве души и разума',

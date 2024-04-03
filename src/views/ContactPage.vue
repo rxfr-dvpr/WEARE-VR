@@ -8,7 +8,7 @@
 
           <p class="contact__content-txt">{{ content.backTxt }}</p>
 
-          <img src="@/assets/images/contact-img.png" alt="" class="contact__content-img">
+          <img :src="content.img" alt="" class="contact__content-img">
         </div>
 
         <form @submit.prevent class="contact__form">
@@ -69,7 +69,8 @@ export default {
       },
       content: {
         title: 'РАсскажите О вашем проекте',
-        backTxt: 'Контакты'
+        backTxt: 'Контакты',
+        img: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Contact%2Fcontact-img.png?alt=media&token=1ea905a5-f288-4d78-86af-18cfcf157abb'
       }
     }
   }
