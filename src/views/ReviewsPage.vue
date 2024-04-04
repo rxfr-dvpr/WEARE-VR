@@ -1,11 +1,38 @@
 <template>
-  <h1>Reviews Page</h1>
+  <section class="reviews__section">
+    <div class="container">
+      <div class="row">
+        <h2 class="reviews-title">{{ title }}</h2>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
 
 export default {
-    name: 'Reviews Page'
+  name: 'Reviews Page',
+  data() {
+    return {
+      title: 'Отзывы',
+      slides: [
+        {
+          name: 'Ксения Жемчугова',
+          job: 'Начальник Департамента закупок ООО «Газпром Нефть Шельф»',
+          msg: 'Высокий уровень квалификации специалистов и оперативное реагирование на изменения технического задания в целом позволили осуществить данный проект в соответствии с разработанным графиков и обеспечить рациональное расходование финансовых ресурсов',
+          img: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Reviews%2Freview-1.png?alt=media&token=8e7c38c7-a2ca-4b7d-b6ac-27d07ac70db9',
+          icon: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/About%2Fgazprom.svg?alt=media&token=117a3361-b7f7-45d1-b427-c9b98bb2e9ea'
+        },
+        {
+          name: 'Павел Осипов',
+          job: 'Начальник Департамента закупок ООО «мегафон»',
+          msg: 'Высокий уровень квалификации специалистов и оперативное реагирование на изменения технического задания в целом позволили осуществить данный проект в соответствии с разработанным графиков и обеспечить рациональное расходование финансовых ресурсов',
+          img: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Reviews%2Freview-1.png?alt=media&token=8e7c38c7-a2ca-4b7d-b6ac-27d07ac70db9',
+          icon: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/About%2Fmegafon.svg?alt=media&token=f5acb0be-30b9-4b2a-9b30-d50f6abd9c48'
+        },
+      ]
+    }
+  }
 }
 
 </script>
