@@ -8,12 +8,14 @@
           <p class="reviews-top-txt">{{ topTxt }}</p>
         </div>
 
+        <ReviewsSwiper :slides="slides"/>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import ReviewsSwiper from '@/components/ReviewsSwiper.vue'
 
 export default {
   name: 'Reviews Page',
@@ -38,6 +40,9 @@ export default {
         },
       ]
     }
+  },
+  components: {
+    ReviewsSwiper
   }
 }
 
