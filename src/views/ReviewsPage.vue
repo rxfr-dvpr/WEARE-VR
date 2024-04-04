@@ -2,7 +2,12 @@
   <section class="reviews__section">
     <div class="container">
       <div class="row">
-        <h2 class="reviews-title">{{ title }}</h2>
+
+        <div class="reviews-top">
+          <h2 class="reviews-title">{{ title }}</h2>
+          <p class="reviews-top-txt">{{ topTxt }}</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -15,6 +20,7 @@ export default {
   data() {
     return {
       title: 'Отзывы',
+      topTxt: 'Как мы работаем',
       slides: [
         {
           name: 'Ксения Жемчугова',
@@ -38,5 +44,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.reviews__section {
+  width: 100%;
+  padding-top: 60px;
+
+  .row {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .reviews-top {
+    width: 100%;
+    position: relative;
+
+    .reviews-title {
+      font-size: 48px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      font-weight: 600;
+    }
+
+    &-txt {
+      font-size: 122px;
+      text-transform: uppercase;
+      z-index: -1;
+      opacity: .1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba($color: #fff, $alpha: .7);
+      user-select: none;
+    }
+  }
+}
 
 </style>
