@@ -7,12 +7,16 @@
 
           <h2 class="cases-title ml">{{ title }}</h2>
 
-          <p class="cases-txt ml">{{ txt }}</p>
+          <p class="cases__descr-txt ml">{{ descr.txt }}</p>
 
-          <p class="cases-txt-2 ml">{{ txt2 }}</p>
+          <p class="cases__descr-txt-2 ml">{{ descr.txt2 }}</p>
+
+          <span class="cases-link ml">Подробнее <i class="fal fa-long-arrow-right"></i></span>
         </div>
 
         <img src="@/assets/images/cases-img.png" alt="" class="cases-img">
+
+        <span class="cases-txt" v-html="absoluteTxt"></span>
       </div>
     </div>
   </section>
@@ -25,8 +29,11 @@ export default {
   data() {
     return {
       title: 'Дизайн интерьера частной квартиры',
-      txt: 'Инновационный квартал Премиального уровня с авторской архитектурой и современными технологиями на берегу реки Москвы.',
-      txt2: 'Выполнение Дизайн проекта в VR, Инженерный проект, Комплектация объекта, Выполнение отделочных работ '
+      descr: {
+        txt: 'Инновационный квартал Премиального уровня с авторской архитектурой и современными технологиями на берегу реки Москвы.',
+        txt2: 'Выполнение Дизайн проекта в VR, Инженерный проект, Комплектация объекта, Выполнение отделочных работ '
+      },
+      absoluteTxt: 'VR-экскурсия <br> по платформе Приразломная'
     }
   }
 }
@@ -41,6 +48,8 @@ export default {
   margin-top: 55px;
   border-top: 1px solid rgba($color: #fff, $alpha: .2);
   border-bottom: 1px solid rgba($color: #fff, $alpha: .2);
+  position: relative;
+  overflow-x: hidden;
 
   .row {
     justify-content: space-between;
@@ -73,7 +82,7 @@ export default {
       letter-spacing: 1.1px;
     }
 
-    .cases-txt {
+    &-txt {
       font-size: 17px;
       font-weight: 300;
 
@@ -87,6 +96,30 @@ export default {
     .ml {
       margin-left: 55px;
     }
+
+    .cases-link {
+      font-size: 15px;
+      text-transform: uppercase;
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      gap: 15px;
+      transition: .3s;
+
+      i {
+        font-size: 20px;
+        margin-top: 2px;
+        transition: .3s;
+      }
+
+      &:hover {
+        color: var(--main-blue);
+
+        i {
+          color: var(--main-blue);
+        }
+      }
+    }
   }
 
   .cases-img {
@@ -96,6 +129,17 @@ export default {
     min-height: 100%;
     object-fit: cover;
     margin-right: 100px;
+  }
+
+  .cases-txt {
+    max-width: 900px;
+    width: 100%;
+    font-size: 52px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    position: absolute;
+    top: 18.5%;
+    right: -45%;
   }
 }
 
