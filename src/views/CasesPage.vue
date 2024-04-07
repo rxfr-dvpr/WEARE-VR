@@ -5,7 +5,7 @@
         <div class="cases__descr">
           <p class="cases-num">01<span>/05</span></p>
 
-          <h2 class="cases-title ml">{{ title }}</h2>
+          <h2 class="cases-title ml all-title-52">{{ title }}</h2>
 
           <p class="cases__descr-txt ml">{{ descr.txt }}</p>
 
@@ -16,7 +16,7 @@
 
         <img :src="img" alt="" class="cases-img">
 
-        <span class="cases-txt" v-html="absoluteTxt"></span>
+        <span class="cases-txt all-title-52" v-html="absoluteTxt"></span>
       </div>
     </div>
   </section>
@@ -77,8 +77,6 @@ export default {
     }
 
     .cases-title {
-      font-size: 52px;
-      text-transform: uppercase;
       font-weight: 400;
       letter-spacing: 1.1px;
     }
@@ -135,8 +133,6 @@ export default {
   .cases-txt {
     max-width: 900px;
     width: 100%;
-    font-size: 52px;
-    text-transform: uppercase;
     letter-spacing: 1.1px;
     position: absolute;
     top: 18.5%;

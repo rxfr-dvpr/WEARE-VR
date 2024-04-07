@@ -2,7 +2,7 @@
   <section class="team__section">
     <div class="container">
       <div class="row">
-        <h2 class="team-title">{{ title }}</h2>
+        <h2 class="team-title all-title-48">{{ title }}</h2>
 
         <TeamSwiper :slides="slides"/>
       </div>
@@ -71,9 +71,7 @@ export default {
   }
 
   .team-title {
-    font-size: 48px;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 600; 
   }
 }
 

@@ -2,7 +2,7 @@
   <section class="docs__section">
     <div class="container">
       <div class="row">
-        <h2 class="docs-title">{{ title }}</h2>
+        <h2 class="docs-title all-title-48">{{ title }}</h2>
 
         <div class="docs__list">
           <figure class="docs__list-item" v-for="(doc, idx) in docs" :key="idx">
@@ -76,9 +76,7 @@ export default {
   }
 
   .docs-title {
-    font-size: 48px;
     font-weight: 600;
-    text-transform: uppercase;
     text-align: center;
   }
 

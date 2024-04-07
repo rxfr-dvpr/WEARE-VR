@@ -2,7 +2,7 @@
   <section class="news__section">
     <div class="container">
       <div class="row">
-        <h2 class="news-title">{{ title }}</h2>
+        <h2 class="news-title all-title-52">{{ title }}</h2>
         
         <div class="news-filter">
           <span class="news-filter-btn" v-for="(filter, idx) in filters" :key="idx" 
@@ -93,12 +93,6 @@ export default {
   .row {
     flex-direction: column;
     row-gap: 20px;
-  }
-
-  .news-title {
-    font-size: 52px;
-    font-weight: 500;
-    text-transform: uppercase;
   }
 
   .news-filter {

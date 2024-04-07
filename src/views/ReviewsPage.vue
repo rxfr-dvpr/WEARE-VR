@@ -4,7 +4,7 @@
       <div class="row">
 
         <div class="reviews-top">
-          <h2 class="reviews-title">{{ title }}</h2>
+          <h2 class="reviews-title all-title-48">{{ title }}</h2>
           <p class="reviews-top-txt">{{ topTxt }}</p>
         </div>
 
@@ -78,8 +78,6 @@ export default {
     position: relative;
 
     .reviews-title {
-      font-size: 48px;
-      text-transform: uppercase;
       letter-spacing: 1.2px;
       position: absolute;
       bottom: 20px;

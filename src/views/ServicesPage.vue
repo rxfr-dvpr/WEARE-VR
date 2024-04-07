@@ -5,7 +5,7 @@
       <div class="row">
 
         <div class="services__descr">
-          <h2 class="services__descr-title">{{ title }}</h2>
+          <h2 class="services__descr-title all-title-48">{{ title }}</h2>
 
           <p class="services__descr-txt">{{ txt }}</p>
         </div>
@@ -71,9 +71,6 @@ export default {
     &-title {
       max-width: 645px;
       width: 100%;
-      font-size: 48px;
-      text-transform: uppercase;
-      font-weight: 500;
     }
 
     &-txt {

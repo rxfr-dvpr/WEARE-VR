@@ -2,7 +2,7 @@
   <section class="technologies__section">
     <div class="container">
         <div class="row">
-            <h2 class="technologies-title">{{ title }}</h2>
+            <h2 class="technologies-title all-title-52">{{ title }}</h2>
 
             <div class="techno__list">
                 <div class="techno__list-item" v-for="(item, idx) in list" :key="idx">
@@ -58,8 +58,6 @@ export default {
         max-width: 930px;
         width: 100%;
         font-weight: 400;
-        font-size: 52px;
-        text-transform: uppercase;
     }
 
     .techno__list {

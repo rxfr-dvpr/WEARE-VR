@@ -2,7 +2,7 @@
   <section class="about__section">
     <div class="container">
       <div class="row">
-        <h2 class="about-title">{{ title }}</h2>
+        <h2 class="about-title all-title-52">{{ title }}</h2>
 
         <p class="about-txt">{{ txt }}</p>
 
@@ -91,9 +91,6 @@ export default {
   .about-title {
     max-width: 700px;
     width: 100%;
-    font-size: 52px;
-    text-transform: uppercase;
-    font-weight: 500;
   }
 
   .about-txt {

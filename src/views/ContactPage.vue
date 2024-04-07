@@ -4,7 +4,7 @@
       <div class="row">
 
         <div class="contact__content">
-          <h2 class="contact-title">{{ content.title }}</h2>
+          <h2 class="contact-title all-title-52">{{ content.title }}</h2>
 
           <p class="contact__content-txt">{{ content.backTxt }}</p>
 
@@ -202,9 +202,6 @@ export default {
     .contact-title {
       max-width: 500px;
       width: 100%;
-      font-size: 52px;
-      text-transform: uppercase;
-      font-weight: 500;
       letter-spacing: 1.1px;
       position: absolute;
       top: 35px;
