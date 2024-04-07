@@ -119,6 +119,10 @@ export default {
             opacity: .6;
             font-weight: 300;
 
+            &-date {
+                font-family: var(--num-font);
+            }
+
             .news-suggestions {
                 text-transform: uppercase;
             }

@@ -104,11 +104,11 @@ export default {
 
         &-num {
             font-size: 22px;
-            letter-spacing: 1.1px;
             transition: .3s;
             min-width: max-content;
             z-index: 6;
             font-weight: 600;
+            font-family: var(--num-font);
             
             &:hover, &.dark {
                 color: var(--main-blue);
