@@ -281,6 +281,7 @@ export default {
 
                 .link-num {
                     font-size: 20px;
+                    font-family: var(--num-font);
                 }
             }
         }

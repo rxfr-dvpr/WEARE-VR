@@ -120,6 +120,7 @@ export default {
       font-size: 48px;
       display: flex;
       flex-direction: column;
+      font-family: var(--num-font);
 
       span {
         font-size: 17px;
