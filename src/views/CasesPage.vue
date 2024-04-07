@@ -14,7 +14,7 @@
           <span class="cases-link ml">Подробнее <i class="fal fa-long-arrow-right"></i></span>
         </div>
 
-        <img src="@/assets/images/cases-img.png" alt="" class="cases-img">
+        <img :src="img" alt="" class="cases-img">
 
         <span class="cases-txt" v-html="absoluteTxt"></span>
       </div>
@@ -33,7 +33,8 @@ export default {
         txt: 'Инновационный квартал Премиального уровня с авторской архитектурой и современными технологиями на берегу реки Москвы.',
         txt2: 'Выполнение Дизайн проекта в VR, Инженерный проект, Комплектация объекта, Выполнение отделочных работ '
       },
-      absoluteTxt: 'VR-экскурсия <br> по платформе Приразломная'
+      absoluteTxt: 'VR-экскурсия <br> по платформе Приразломная',
+      img: 'https://firebasestorage.googleapis.com/v0/b/weare-vr.appspot.com/o/Cases%2Fcases-img.png?alt=media&token=433ea6e7-d2d0-44b5-b82b-a3c5ae774d16'
     }
   }
 }
