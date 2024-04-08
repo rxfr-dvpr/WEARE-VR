@@ -74,7 +74,7 @@ export default {
         row-gap: 35px;
 
         &-title {
-            font-size: 70px;
+            font-size: calc(58px + 12 * (100vw / 1920));
             text-transform: uppercase;
             font-weight: 300;
         }
@@ -85,6 +85,7 @@ export default {
             margin-left: 55px;
             letter-spacing: 1.1px;
             font-weight: 300;
+            font-size: 16px;
         }
 
 
@@ -135,6 +136,22 @@ export default {
                 left: -2%;
             }
         }
+    }
+}
+
+@media (min-width: 1920px) {
+    .header__descr-title {
+        font-size: 70px !important;
+    }
+}
+
+@media (max-width: 1545px) {
+    .header__descr {
+        max-width: 600px;
+    }
+
+    .header-img-box {
+        max-width: 650px;
     }
 }
 
