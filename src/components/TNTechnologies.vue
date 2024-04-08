@@ -80,17 +80,27 @@ export default {
             }
 
             .techno-title {
-                font-size: 25px;
+                font-size: calc(18px + 7 * (100vw / 1920));
                 font-weight: 600;
             }
 
             .techno-txt {
-                font-size: 15px;
+                font-size: calc(13px + 2 * (100vw / 1920));
                 font-family: var(--scnd-font);
                 opacity: .8;
                 font-weight: 200;
             }
         }
+    }
+}
+
+@media (min-width: 1920px) {
+    .techno-title {
+        font-size: 25px !important;
+    }
+
+    .techno-txt {
+        font-size: 15px !important;
     }
 }
 
