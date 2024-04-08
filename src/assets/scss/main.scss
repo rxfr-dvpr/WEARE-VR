@@ -161,13 +161,23 @@ button {
 }
 
 .all-title-52 {
-    font-size: 52px;
+    font-size: calc(32px + 20 * (100vw / 1920));
     text-transform: uppercase;
     font-weight: 500;
 }
 
 .all-title-48 {
-    font-size: 48px;
+    font-size: calc(32px + 16 * (100vw / 1920));
     text-transform: uppercase;
     font-weight: 500;
+}
+
+@media (min-width: 1920px) {
+    .all-title-52 {
+        font-size: 52px !important;
+    }
+
+    .all-title-48 {
+        font-size: 48px !important;
+    }
 }
