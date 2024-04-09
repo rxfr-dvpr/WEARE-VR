@@ -87,6 +87,9 @@ export default {
         max-width: 200px;
         width: 100%;
         z-index: 8;
+        display: flex;
+        justify-items: center;
+        align-items: center;
 
         &-img {
             width: 100%;
@@ -103,7 +106,7 @@ export default {
         align-items: center;
 
         &-num {
-            font-size: 22px;
+            font-size: calc(15px + 7 * (100vw / 1920));
             transition: .3s;
             min-width: max-content;
             z-index: 6;
@@ -113,6 +116,10 @@ export default {
             &:hover, &.dark {
                 color: var(--main-blue);
             }
+        }
+
+        &-btn {
+            font-size: calc(11px + 3 * (100vw / 1920));
         }
     }
 
@@ -268,7 +275,7 @@ export default {
             }
 
             &-link {
-                font-size: 42px;
+                font-size: calc(25px + 17 * (100vw / 1920));
                 text-transform: capitalize;
                 opacity: .5;
                 transition: .3s;
@@ -306,6 +313,46 @@ export default {
 .consult-enter-from,
 .consult-leave-to {
     opacity: 0;
+}
+
+@media (min-width: 1920px) {
+    .nav__list-link {
+        font-size: 42px !important;
+    }
+
+    .nav-contact {
+        &-num {
+            font-size: 22px !important;
+        }
+
+        &-btn {
+            font-size: 14px !important;
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .nav__list-item {
+        max-width: 270px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-logo {
+        max-width: 140px !important;
+    }
+}
+
+@media (max-width: 678px) {
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px !important;
+
+        &-item {
+            max-width: max-content !important;
+        }
+    }
 }
 
 </style>
