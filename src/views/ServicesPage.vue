@@ -76,7 +76,7 @@ export default {
     &-txt {
       max-width: 540px;
       width: 100%;
-      font-size: 17px;
+      font-size: calc(14px + 3 * (100vw / 1920));
       color: rgba($color: #fff, $alpha: .8);
     }
   }
@@ -124,6 +124,14 @@ export default {
       &:last-of-type {
         margin-top: 40px;
       }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .services__descr {
+    &-txt {
+      font-size: 17px !important;
     }
   }
 }
