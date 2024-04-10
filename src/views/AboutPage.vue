@@ -112,6 +112,7 @@ export default {
     justify-content: space-between;
     margin-top: 40px;
     gap: 15px;
+    flex-wrap: wrap;
 
     &-item {
       font-size: 48px;
@@ -136,12 +137,14 @@ export default {
   }
 
   .sponsors__list {
-    max-width: max-content;
+    max-width: 100%;
     width: 100%;
     display: flex;
     column-gap: 45px;
     align-items: flex-end;
     margin-top: auto;
+    flex-wrap: wrap;
+    row-gap: 15px;
 
     &-title {
       font-size: 14px;
